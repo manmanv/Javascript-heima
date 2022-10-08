@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		var str1 = '.';
+		for(var h = 1; h <= 9; h++){
+		    for(var l = 1; l <= 9; l++){
+                if(l < h){
+                    str1 = str1 + '.';
+                }
+                if(l == h){
+                    str1 = str1 + '\n';
+                }
+            }
+		}
+        console.log(str1);
+        var str2 = '.';
+        for(var h = 1; h <= 9; h++){
+            for(var l = 9; l >= 1; l--){
+                if(l > h){
+                    str2 = str2 + '.';
+                }
+                if(l == h){
+                    str2 = str2 + '\n';
+                }
+            }
+        }
+        console.log(str2);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

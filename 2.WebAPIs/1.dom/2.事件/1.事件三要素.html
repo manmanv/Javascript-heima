@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<button id = 'btn'>唐伯虎</button>
+	<div>表点我！！！！</div>
+	<script>
+		//1.获得事件源
+		var btn = document.getElementById('btn');
+		//2.事件类型-如何触发-鼠标点击(onclick)，什么事件
+		//3.事件处理程序，通过一个函数赋值的方式,完成
+        btn.onclick = function () {
+	        alert('点秋香')
+        }
+        
+        var dian = document.querySelector('div');
+        dian.onclick = function () {
+	        alert('生气了！！！')
+        }
+	</script>
+</body>
+</html>

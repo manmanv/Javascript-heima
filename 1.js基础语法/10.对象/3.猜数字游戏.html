@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script>
+		// 生成一个一到十的随机数
+        var num = Math.floor(Math.random()*(10-1+1))+1;
+        var i = 0;
+        while(i == 0){
+            var ifnum = prompt('请输入一个1~10的数字：');
+            Number(ifnum);
+            if(ifnum > num){
+                alert('大了');
+            }
+            else if(ifnum < num){
+                alert('小了');
+            }
+            else{
+                alert('猜对了！');
+                i = 1;
+            }
+        }
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<div></div>
+	<script>
+		//1.innerText
+		var div = document.querySelector('div');
+		//innerText不识别html标签，直接打印
+		div.innerText = '<strong>今天是：</strong>2022';
+		
+		//2.innerHTML
+		//识别html标签并有效果
+		div.innerHTML = '<strong>今天是：</strong>2022'
+	</script>
+</body>
+</html>

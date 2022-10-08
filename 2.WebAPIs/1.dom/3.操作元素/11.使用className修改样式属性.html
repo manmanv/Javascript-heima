@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin: 100px auto;
+			text-align: center;
+		}
+		.change{
+			width: 300px;
+			height: 300px;
+			background-color: plum;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="first">文本</div>
+	
+	<script>
+		var cheg = document.querySelector('div');
+		
+		//原来的类名被覆盖
+		cheg.onclick = function () {
+			this.className = 'change';
+
+            //如果想要保留原先的类名，可以
+			this.className = 'first change';
+        }
+        
+		
+	</script>
+</body>
+</html>

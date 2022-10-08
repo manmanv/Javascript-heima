@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		ul{
+			display: block;
+			margin: 100px auto;
+			width: 200px;
+			height: 300px;
+			flex-wrap: wrap;
+		}
+		li{
+			display: inline-block;
+			list-style: none;
+			margin-top: 10px;
+			width: 50px;
+			height: 50px;
+			background-color: pink;
+			background: url("../sprite.png") no-repeat center;
+			background-size: 25px;
+		}
+	</style>
+</head>
+<body>
+	<!--1.首先精灵图的排列是有规律的-->
+	<!--2.核心思路：用for循环修改精灵图的背景位置-->
+	<!--3.索引号*44就是每个li背景的y坐标-->
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+	<script>
+		var lis = document.querySelectorAll('li');
+		for(var i = 0; i < lis.length; i++){
+		    var index = i * 44;
+		    lis[i].style.backgroundPosition = '0 -' + index + 'px';
+		}
+	</script>
+</body>
+</html>

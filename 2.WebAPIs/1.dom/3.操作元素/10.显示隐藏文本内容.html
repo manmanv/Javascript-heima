@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		input{
+			display: inline-block;
+			margin: 100px 0 0 500px;
+			outline: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="search" value="手机">
+		<button>搜索</button>
+	</div>
+	
+	<script>
+		var input = document.querySelector('input');
+		input.onfocus = function () {
+			if(this.value === '手机'){
+                input.value = '';
+			}
+        }
+        input.onblur = function () {
+            if(this.value === ''){
+                input.value = '手机';
+            }
+        }
+	</script>
+</body>
+</html>
