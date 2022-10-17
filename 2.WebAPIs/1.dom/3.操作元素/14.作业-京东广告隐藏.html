@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		div{
+			width: 80px;
+			height: 80px;
+			background: url("../download.png") no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	<button>x</button>
+	</div>
+	<script>
+		var div = document.querySelector('div');
+		var btn = document.querySelector('button');
+		btn.onclick = function () {
+			div.style.display = 'none';
+        }
+	</script>
+</body>
+</html>

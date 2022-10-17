@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button>传统注册事件</button>
+<button>方法监听注册事件</button>
+<button>attach</button>
+<script>
+	var btns = document.querySelectorAll('button');
+	btns[0].onclick = function () {
+		alert('hi~');
+    }
+    btns[0].onclick = function () {
+        alert('?');
+    }
+    
+    //事件监听注册事件
+	btns[1].addEventListener('click',function () {
+        alert(22);
+    })
+    btns[1].addEventListener('click',function () {
+        alert(33);
+    })
+	
+	//attachEvent IE独有 IE9以前才支持
+	btns[2].attachEvent('onclick',function () {
+		alert(44);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*td,
+		th{
+			border-left:1px solid #959595;
+			border-bottom:1px solid #959595;
+		}
+		th{
+			border-top:1px solid #959595;
+		}
+		tr td:last-child,
+		th:last-child{
+			border-right:1px solid #959595;
+		}*/
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		table{
+			border-collapse: collapse;
+			border: 1px solid #959595;
+			margin: 100px auto;
+			width: 300px;
+			height: 200px;
+		}
+		td,th{
+			padding: 10px;
+			border: 1px solid #959595;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+		<th><input type="checkbox" id="choice-all"></th>
+		<th>商品</th>
+		<th>价钱</th>
+		</thead>
+		<tbody>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>iphone8</td>
+			<td>8000</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>ipad pro</td>
+			<td>5000</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>ipad air</td>
+			<td>2000</td>
+		</tr>
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>apple watch</td>
+			<td>2000</td>
+		</tr>
+		</tbody>
+	</table>
+	<script>
+		var chAll = document.getElementById('choice-all');
+		var ch = document.querySelector('tbody').getElementsByTagName('input');
+		
+		//总复选框选中则全部选中
+		chAll.onclick = function () {
+            //this.checked可以得到当前复选框的选中状态，如果true就是选中，false就是未选中
+			for (var i = 0; i < ch.length; i++){
+			    ch[i].checked = this.checked;
+			}
+        }
+        //子复选框没有选中则总复选框取消全选
+		for(var i = 0; i < ch.length; i++){
+		    ch[i].onclick = function () {
+		        //控制全选按钮是否选中
+			    var flag = true;
+			    //每次点击都要循环检查四个小按钮是否选中
+			    for(var i = 0; i < ch.length; i++){
+			        if(!ch[i].checked){
+			            flag = false;
+			            break;
+			        }
+			    }
+			    chAll.checked = flag;
+            }
+		}
+	</script>
+</body>
+</html>

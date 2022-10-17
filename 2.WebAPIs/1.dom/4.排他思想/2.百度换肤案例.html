@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		body{
+			background-image:url("../img/1298.jpg_wh300.jpg");
+			background-size: cover;
+		}
+		div{
+			margin: 100px auto;
+			width: 500px;
+		}
+		li{
+			display: inline-block;
+			width: 80px;
+			list-style: none;
+		}
+		img{
+			width: 80px;
+			
+		}
+		
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><img src="../img/1298.jpg_wh300.jpg" alt=""></li>
+			<li><img src="../img/2478.jpg_wh300.jpg" alt=""></li>
+			<li><img src="../img/5175.jpg_wh300.jpg" alt=""></li>
+			<li><img src="../img/5176.jpg_wh300.jpg" alt=""></li>
+			<li><img src="../img/6109.jpg_wh300.jpg" alt=""></li>
+		</ul>
+	</div>
+	
+	<script>
+		var imgs = document.querySelector('ul').querySelectorAll('img');
+		var body = document.body;
+		for (var i = 0; i < imgs.length; i++){
+		    imgs[i].onclick = function () {
+			    for(var i = 0; i < imgs.length; i++){
+			        body.style.backgroundImage = '../img/1298.jpg_wh300.jpg';
+			    }
+			    body.style.backgroundImage = 'url('+ this.src +')';
+            }
+		}
+	</script>
+</body>
+</html>

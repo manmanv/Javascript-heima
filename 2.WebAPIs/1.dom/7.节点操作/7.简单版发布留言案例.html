@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		textarea{
+			border: 0;
+			border: 1px solid plum;
+			outline: 0;
+		}
+		li{
+			display: block;
+			width: 400px;
+			height: 50px;
+			list-style: none;
+			background-color: plum;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<textarea name="" id="" cols="30" rows="10" placeholder="请输入"></textarea>
+	<button>发布</button>
+	<ul>
+		<li></li>
+	</ul>
+	
+	<script>
+		//获取元素
+		var text = document.querySelector('textarea');
+		var btn = document.querySelector('button');
+		var ul = document.querySelector('ul');
+		
+		//注册事件
+		btn.onclick = function () {
+			//添加li
+			//判断是否有内容，有则添加
+			if (text.value == ''){
+			    alert('您没有输入内容！');
+			    return false;
+			}
+			else{
+                //1.创建元素
+                var li = document.createElement('li');
+                //先有li才能赋值
+				li.innerHTML = text.value;
+				//把text清空
+				text.value = '';
+                //2，添加元素
+                ul.insertBefore(li,ul.children[0]);
+			}
+        }
+	</script>
+</body>
+</html>

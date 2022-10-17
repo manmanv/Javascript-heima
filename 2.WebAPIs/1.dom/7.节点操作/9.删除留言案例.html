@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		textarea{
+			margin-left: 100px;
+			margin-top: 20px;
+			outline: 0;
+			border: 1px solid plum;
+		}
+		li{
+			list-style: none;
+			width: 400px;
+			height: 30px;
+			background-color: plum;
+			margin-left: 100px;
+			margin-top: 10px;
+		}
+		li a{
+			float: right;
+		}
+		
+	</style>
+</head>
+<body>
+	<textarea name="" id="" cols="30" rows="10" placeholder="请输入"></textarea>
+	<button class="up">发布</button>
+	<ul>
+	</ul>
+	
+	<script>
+		var text = document.querySelector('textarea');
+		var btn_up = document.querySelector('.up');
+		var ul = document.querySelector('ul');
+		
+		btn_up.onclick = function () {
+			if(text.value == ''){
+			    alert("请输入内容");
+			}
+			else{
+			    var lii = document.createElement('li');
+			    
+			    //javascript:;阻止链接跳转
+			    lii.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
+			    text.value = '';
+				
+			    ul.insertBefore(lii,ul.children[0]);
+			    
+				// 删除 删除的是当前链接的父亲
+				var as = document.querySelectorAll('a');
+				for (var i = 0; i < as.length; i++){
+				    as[i].onclick = function () {
+					    ul.removeChild(this.parentNode);
+                    }
+				} 
+			}
+        }
+        
+        
+	</script>
+</body>
+</html>

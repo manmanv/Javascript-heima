@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.bg{
+			background-color: plum;
+		}
+	</style>
+</head>
+<body>
+	<!--1.用到鼠标事件：鼠标经过-onmouseover 鼠标离开-onmouseout-->
+	<!--2.核心：鼠标经过tr，当前行背景变色，离开去掉-->
+	<!--3.thead不变色-->
+	<table>
+		<thead>
+			<th>代码</th>
+			<th>名称</th>
+			<th>最新公布</th>
+			<th>累计</th>
+			<th>前单位</th>
+			<th>增长率</th>
+			<th>公布日期</th>
+		</thead>
+		<tbody>
+		<tr>
+			<td>000</td>
+			<td>农行</td>
+			<td>1.2</td>
+			<td>1.2</td>
+			<td>1.02</td>
+			<td>+0.47%</td>
+			<td>2019-05-12</td>
+		</tr>
+		<tr>
+			<td>000</td>
+			<td>农行</td>
+			<td>1.2</td>
+			<td>1.2</td>
+			<td>1.02</td>
+			<td>+0.47%</td>
+			<td>2019-05-12</td>
+		</tr>
+		<tr>
+			<td>000</td>
+			<td>农行</td>
+			<td>1.2</td>
+			<td>1.2</td>
+			<td>1.02</td>
+			<td>-0.47%</td>
+			<td>2019-05-12</td>
+		</tr>
+		<tr>
+			<td>000</td>
+			<td>农行</td>
+			<td>1.2</td>
+			<td>1.2</td>
+			<td>1.02</td>
+			<td>+0.47%</td>
+			<td>2019-05-12</td>
+		</tr>
+		<tr>
+			<td>000</td>
+			<td>农行</td>
+			<td>1.2</td>
+			<td>1.2</td>
+			<td>1.02</td>
+			<td>-0.47%</td>
+			<td>2019-05-12</td>
+		</tr>
+		</tbody>
+	</table>
+	
+	<script>
+		var trs = document.querySelector('tbody').querySelectorAll('tr');
+		for(var i = 0; i < trs.length; i++){
+		    trs[i].onmouseover = function () {
+                this.className = 'bg';
+            }
+            trs[i].onmouseout = function () {
+	            this.className = '';
+            }
+		}
+	</script>
+</body>
+</html>

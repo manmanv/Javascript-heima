@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<ul>
+	<li>1</li>
+</ul>
+<script>
+	var ul = document.querySelector('ul');
+	//克隆
+	var lii = ul.children[0].cloneNode(true);
+	//添加
+	ul.appendChild(lii);
+</script>
+</body>
+</html>

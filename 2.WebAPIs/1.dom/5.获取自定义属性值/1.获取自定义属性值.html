@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<div id="demo" index="1"></div>
+	<script>
+        // 1.获取元素的属性值
+        // element.属性
+		var div = document.querySelector('div');
+        console.log(div.id);
+        //element.getAttribute('属性'); get获取 attribute属性
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('index'));
+
+        //2.设置元素属性值
+		//element.属性 = '值'
+		div.id = 'test';
+		//element.setAttribute('属性'，'属性值')；
+		div.setAttribute('index','2')
+        console.log(div.getAttribute('index'));
+		
+		//3.移除自定义属性
+		div.removeAttribute('index');
+        console.log(div.getAttribute('index'));
+	</script>
+</body>
+</html>

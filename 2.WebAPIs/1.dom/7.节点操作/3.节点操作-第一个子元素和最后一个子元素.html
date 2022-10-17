@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<ol>
+	<li>我是li1</li>
+	<li>我是li2</li>
+	<li>我是li3</li>
+	<li>我是li4</li>
+</ol>
+<script>
+	var ol = document.querySelector('ol');
+	//1.firstChild获取的是第一个子节点，不管是文本节点还是元素节点
+    /*console.log(ol.firstChild);
+    //2.lastChild返回的是最后一个子节点
+    console.log(ol.lastChild);
+    //3.firstElementChild返回第一个子元素节点
+    console.log(ol.firstElementChild);
+    //4.lastElementChild返回最后一个子元素节点
+    console.log(ol.lastElementChild);
+    //5.实际开发的写法
+    console.log(ol.children[0]);*/
+    //最后一个元素
+    console.log(ol.children[ol.children.length - 1]);
+</script>
+</body>
+</html>
