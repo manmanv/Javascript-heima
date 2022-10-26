@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form action="">
+	<input type="text">
+	<button>发送短信</button>
+</form>
+<script>
+	var btn = document.querySelector('button');
+	var code = null;
+	btn.addEventListener('click',function () {
+        var s = 10;
+        btn.disabled = true;
+		code = setInterval(function () {
+            
+            if(s == 0){
+                clearInterval(code);
+                btn.disabled = false;
+                btn.innerHTML = '发送短信';
+			}else{
+                btn.innerHTML = s;
+                s--;
+            }
+        },1000)
+    })
+</script>
+</body>
+</html>

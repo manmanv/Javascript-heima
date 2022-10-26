@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.father{
+			position: relative;
+			margin-left: 200px;
+			width: 200px;
+			height: 200px;
+			background-color: plum;
+		}
+		.son{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: #959595;
+			margin-left: 100px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<script>
+		var son = document.querySelector('.son');
+        console.log(son.offsetTop);     //0
+        console.log(son.offsetLeft);    //100
+
+        console.log(son.offsetWidth);   //120   padding会撑大盒子
+	</script>
+</body>
+</html>

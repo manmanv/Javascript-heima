@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.search{
+			position: relative;
+			width: 180px;
+			margin: 100px;
+		}
+		.con{
+			display: none;
+			position: absolute;
+			top: -80px;
+			width: 170px;
+			height: 50px;
+			border: 1px solid black;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+			padding: 10px;
+		}
+		.con::before{
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: 70px;
+			left: 18px;
+			border:8px solid black;
+			border-style: solid dashed solid;
+			border-color: black transparent transparent;
+		}
+	</style>
+</head>
+<body>
+<div class="search">
+	<input type="search">
+	<div class="con"></div>
+</div>
+<script>
+	var con = document.querySelector('.con');
+	var input = document.querySelector('input');
+	
+	input.addEventListener('keyup',function (e) {
+        if(this.value == ''){
+            con.style.display = 'none';
+        }
+        else{
+            con.style.display = 'block';
+            con.innerHTML = this.value;
+        }
+    })
+	//失去隐藏 获得显示
+	input.addEventListener('blur',function () {
+		con.style.display = 'none';
+    })
+	input.addEventListener('focus',function () {
+		if (this.value != ''){
+		    con.style.display = 'block';
+		}
+    })
+</script>
+</body>
+</html>

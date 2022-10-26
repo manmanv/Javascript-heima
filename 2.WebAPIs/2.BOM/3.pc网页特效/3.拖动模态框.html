@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.boxOut{
+			display: none;
+			position: relative;
+			margin:100px auto;
+			width: 400px;
+			height: 250px;
+			background-color: white;
+		}
+		.closeOut{
+			position: absolute;
+			right: -25px;
+			top:-25px;
+			width: 50px;
+			height: 50px;
+			background-color: white;
+			border-radius: 25px;
+			text-align: center;
+			line-height: 50px;
+		}
+		.top{
+			height: 50px;
+			font-size: 18px;
+			margin: 0 auto;
+			text-align: center;
+			line-height: 50px;
+			background-color: #cccccc;
+		}
+		
+		form{
+			position: relative;
+		}
+		
+		label:first-of-type{
+			position: absolute;
+			right:300px;
+			top: 30px;
+		}
+		label:last-of-type{
+			position: absolute;
+			right:300px;
+			top: 80px;
+		}
+		input:first-of-type{
+			position: absolute;
+			left: 100px;
+			width: 250px;
+			height: 30px;
+			top: 20px;
+			outline: 0;
+		}
+		input:last-of-type{
+			position: absolute;
+			left: 100px;
+			width: 250px;
+			height: 30px;
+			top: 70px;
+			outline: 0;
+		}
+		button{
+			position: absolute;
+			top:130px;
+			left:80px;
+			width: 250px;
+			height: 40px;
+		 }
+	</style>
+</head>
+<body>
+	<a href="#" class="proOut">点击，弹出登录框</a>
+	<div class="boxOut">
+		
+		<div class="closeOut">关闭</div>
+		
+		<div class="top">登录会员</div>
+		
+		<form action="">
+			<label for="un">用户名：</label>
+			<input type="text" placeholder="请输入用户名" id="un"><br>
+			
+			<label for="psd">登录密码：</label>
+			<input type="password" placeholder="请输入登录密码" id="psd"><br>
+			<button>登录会员</button>
+		</form>
+		
+	</div>
+	<script>
+		var boxOut = document.querySelector('.boxOut');
+		var proOut = document.querySelector('.proOut');
+		var body = document.querySelector('body');
+		var close = document.querySelector('.closeOut');
+		var top = document.querySelector('.top');
+		
+		//点击弹框
+		proOut.addEventListener('click',function () {
+			boxOut.style.display = 'block';
+			body.style.backgroundColor = '#BFBFBF';
+
+        });
+		//关闭弹框
+		close.addEventListener('click',function () {
+			boxOut.style.display = 'none';
+			body.style.backgroundColor = 'white';
+        })
+		
+        
+	</script>
+</body>
+</html>
